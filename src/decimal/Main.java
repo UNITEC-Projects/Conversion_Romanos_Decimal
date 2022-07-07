@@ -3,7 +3,14 @@ import java.util.Scanner;
 
 import decimal.Dato.TipoDato;
 
+/**
+ * Clase que maneja el flujo principal de la ejecución y funcionalidad de este programa. 
+ * 
+ * @author antonio
+ *
+ */
 public class Main {
+	@SuppressWarnings("resource")
 	public static void main(String args[]) {
 		
 		Scanner in = new Scanner(System.in);

@@ -1,36 +1,20 @@
 package decimal;
 
+/**
+ * Clase que contiene las propiedades de conversión de números romanos a otros sistemas numéricos.
+ * 
+ * @author antonio
+ *
+ */
 public class Romano {
 	
 	/**
+	 * Realiza la conversión de un número en sistema decimal a romano.
 	 * 
-	 * @param cadenaRomano
-	 * @return
+	 * @param numero String que contiene una cifra en romano la cual se quiere convertir a decimal.
+	 * @return Retorna el número convertido a sistema numérico decimal.
 	 */
-	private String validarLongitud(String cadenaRomano) {
-		String numero = cadenaRomano;
-		
-		int longitud = cadenaRomano.length();
-		int multiploInf = longitud / 4;		
-		int multiploSup = multiploInf + 1;	
-		int multiploSupLen = 4 * multiploSup;
-		
-		if (longitud % 4 != 0) {			
-			for(int i = longitud; i < multiploSupLen + 4; i++) {
-				numero = numero + '0';
-			}
-		} else {
-			numero = numero + "0000";
-		}
-		
-		return numero;
-	}
-	
-	/**
-	 * 
-	 * @param numero
-	 * @return
-	 */
+	@SuppressWarnings("incomplete-switch")
 	public String romanoToDecimal(String numero) {
 		int i;
 		String segmento;
@@ -130,9 +114,10 @@ public class Romano {
 	}
 	
 	/**
+	 * Convierte unidades en romano a unidades en decimal.
 	 * 
-	 * @param unidad
-	 * @return
+	 * @param unidad String equivalente a un número de unidad en romano.
+	 * @return Retorna la conversión de la unidad a número romano 
 	 */
 	private String unidadesToDecimal(String unidad) {
 		switch (unidad) {
@@ -160,9 +145,12 @@ public class Romano {
 	}
 	
 	/**
+	 * Convierte decenas en romano a decenas en decimal.
 	 * 
-	 * @param decena
-	 * @return
+	 * Recibe un número de decenas en romano.
+	 * 
+	 * @param decena String equivalente a un número de decena en romano.
+	 * @return Retorna la conversión de la decena a número romano
 	 */
 	private String decenasToDecimal(String decena) {
 		switch (decena) {
@@ -190,9 +178,12 @@ public class Romano {
 	}
 	
 	/**
+	 * Convierte centenas en romano a centenas en decimal.
 	 * 
-	 * @param centena
-	 * @return
+	 * Recibe un número de centenas en romano.
+	 * 
+	 * @param centena String equivalente a un número de centena en romano.
+	 * @return Retorna la conversión de la centena a número romano
 	 */
 	private String centenasToDecimal(String centena) {
 		switch (centena) {
@@ -220,9 +211,12 @@ public class Romano {
 	}
 	
 	/**
+	 * Convierte millares en romano a millares en decimal.
 	 * 
-	 * @param millar
-	 * @return
+	 * Recibe un número de millar en romano.
+	 * 
+	 * @param millar String equivalente a un número de millar en romano.
+	 * @return Retorna la conversión del millar a número romano
 	 */
 	private String millaresToDecimal(String millar) {
 		switch (millar) {
@@ -237,6 +231,40 @@ public class Romano {
 		}
 	}
 	
+	/**
+	 * Concatena números cero al final de la cadena para que el número pueda 
+	 * ser recorrido, evaluado y convertido correctamente por el método romanoToDecimal().
+	 *  
+	 * @param cadenaRomano String que contiene el número romano.
+	 * @return Retorna un string de múltiplo de 4 2 veces mayor a la longitud de cadenaRomano.
+	 * 
+	 * Ejemplo: Se recibe XX - Se retorna XX000000
+	 */
+	private String validarLongitud(String cadenaRomano) {
+		String numero = cadenaRomano;
+		
+		int longitud = cadenaRomano.length();
+		int multiploInf = longitud / 4;		
+		int multiploSup = multiploInf + 1;	
+		int multiploSupLen = 4 * multiploSup;
+		
+		if (longitud % 4 != 0) {			
+			for(int i = longitud; i < multiploSupLen + 4; i++) {
+				numero = numero + '0';
+			}
+		} else {
+			numero = numero + "0000";
+		}
+		
+		return numero;
+	}
+	
+	/**
+	 * Tipos de cifras que existen en el sistema númerico romano.
+	 * 
+	 * @author antonio
+	 *
+	 */
 	private enum TipoDigito {
 		Millar, Centena, Decena, Unidad, None
 	}

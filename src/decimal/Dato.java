@@ -1,5 +1,12 @@
 package decimal;
 
+/**
+ * Clase que contiene propiedades de validación y tipos correspondientes a 
+ * los sistemas numéricos que se pueden convertir en este programa. 
+ * 
+ * @author antonio
+ *
+ */
 public class Dato {
 	
 	/**

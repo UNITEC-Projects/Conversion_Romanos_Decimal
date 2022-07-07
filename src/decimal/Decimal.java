@@ -1,11 +1,18 @@
 package decimal;
 
+/**
+ * Clase que contiene las propiedades de conversión de números en sistema decimal a otros sistemas numéricos.
+ * 
+ * @author antonio
+ *
+ */
 public class Decimal {
 	
 	/**
+	 * Convierte un número en sistema numérico decimal a un número en sistema numérico romano. 
 	 * 
-	 * @param numero
-	 * @return
+	 * @param numero Número en sistema numérico decimal.
+	 * @return Retorna la conversión a sistema numérico romano
 	 */
 	public String decimalToRomano(String numero) {
 		String romano = "";
@@ -33,9 +40,10 @@ public class Decimal {
 	}
 	
 	/**
+	 * Convierte una unidad en sistema numérico decimal a una unidad en sistema numérico romano.
 	 * 
-	 * @param unidad
-	 * @return
+	 * @param unidad Unidad en sistema numérico decimal.
+	 * @return Retorna la conversión en sistema numérico romano.
 	 */
 	private String unidadesToRomano(String unidad) {
 		switch (unidad) {
@@ -63,9 +71,10 @@ public class Decimal {
 	}
 	
 	/**
+	 * Convierte una decena en sistema numérico decimal a una decena en sistema numérico romano.
 	 * 
-	 * @param decena
-	 * @return
+	 * @param decena Decena en sistema numérico decimal.
+	 * @return Retorna la conversión en sistema numérico romano.
 	 */
 	private String decenasToRomano(String decena) {
 		switch (decena) {
@@ -93,9 +102,10 @@ public class Decimal {
 	}
 	
 	/**
+	 * Convierte una centena en sistema numérico decimal a una centena en sistema numérico romano.
 	 * 
-	 * @param centena
-	 * @return
+	 * @param centena Centena en sistema numérico decimal.
+	 * @return Retorna la conversión en sistema numérico romano.
 	 */
 	private String centenasToRomano(String centena) {
 		switch (centena) {
@@ -123,9 +133,10 @@ public class Decimal {
 	}
 	
 	/**
+	 * Convierte un millar en sistema numérico decimal a un millar en sistema numérico romano.
 	 * 
-	 * @param millar
-	 * @return
+	 * @param millar Millar en sistema numérico decimal.
+	 * @return Retorna la conversión en sistema numérico romano.
 	 */
 	private String millaresToRomano(String millar) {
 		switch (millar) {
@@ -141,9 +152,10 @@ public class Decimal {
 	}
 	
 	/**
+	 * Valida que el largo máximo de cadena del digito decimal sea de 4 caracteres.
 	 * 
-	 * @param cadenaDecimal
-	 * @return
+	 * @param cadenaDecimal Digito en sistema numérico decimal.
+	 * @return Retorna un string con el digito con longitud de 4.
 	 */
 	private String validarLongitud(String cadenaDecimal) {
 		int longitud = cadenaDecimal.length();
